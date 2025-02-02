@@ -9,6 +9,7 @@
         (part_at ?p - part ?b - bin)
         (holding ?p - part)
         (gripper_empty)
+        (occupied ?b - bin)
     )
 
     (:action move
@@ -33,6 +34,7 @@
             (not (part_at ?p ?b))
             (holding ?p)
             (not (gripper_empty))
+            (not (occupied ?b))
         )
     )
 
@@ -41,11 +43,13 @@
         :precondition (and 
             (robot_at ?b)
             (holding ?p)
+            (not (occupied ?b))
         )
         :effect (and
             (not (holding ?p))
             (gripper_empty)
             (part_at ?p ?b)
+            (occupied ?b)
         )
     )
 

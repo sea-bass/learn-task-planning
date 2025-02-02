@@ -8,9 +8,11 @@
 
   (:init
     (robot_at bin_3)
+    (gripper_empty)
     (part_at part_1 bin_1)
     (part_at part_2 bin_2)
-    (gripper_empty)
+    (occupied bin_1)
+    (occupied bin_2)
   )
 
   (:goal
